@@ -38,3 +38,9 @@ fit-track/
 - CRUD Endpoint di `/api/v1/users`
 - Entitas: User, Role
 - Service & Repository terintegrasi dengan PostgreSQL
+
+### Modul Workout Tracker
+- Endpoint Katalog Exercise di `/api/v1/exercises`
+- Endpoint Workout Session & Logs di `/api/v1/workouts`
+- Entitas: Exercise, WorkoutSession, WorkoutLog
+- Karena fitur Autentikasi ditunda, userId di-pass secara manual pada Request Body.
