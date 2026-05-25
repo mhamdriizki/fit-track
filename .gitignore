@@ -1,0 +1,19 @@
+# Maven
+backend/target/
+*.jar
+*.war
+*.ear
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# VS Code
+.vscode/
+
+# Mac OS
+.DS_Store
+
+# Log files
+*.log
