@@ -25,7 +25,7 @@ public class DataSeeder {
                         .id(UUID.fromString("d290f1ee-6c54-4b01-90e6-d701748f0851"))
                         .username("johndoe")
                         .email("john@example.com")
-                        .password("hashed_password") // mock
+                        .passwordHash("hashed_password") // mock
                         .currentWeight(75.5)
                         .targetWeight(70.0)
                         .role(Role.USER)
@@ -39,25 +39,25 @@ public class DataSeeder {
             if (exerciseRepository.count() == 0) {
                 Exercise pushUp = Exercise.builder()
                         .name("Push Up")
-                        .category("Chest")
+                        .muscleGroup("Chest")
                         .description("Bodyweight chest exercise")
                         .build();
 
                 Exercise squat = Exercise.builder()
                         .name("Barbell Squat")
-                        .category("Legs")
+                        .muscleGroup("Legs")
                         .description("Lower body compound movement")
                         .build();
 
                 Exercise pullUp = Exercise.builder()
                         .name("Pull Up")
-                        .category("Back")
+                        .muscleGroup("Back")
                         .description("Bodyweight back exercise")
                         .build();
 
                 Exercise deadlift = Exercise.builder()
                         .name("Deadlift")
-                        .category("Back/Legs")
+                        .muscleGroup("Back/Legs")
                         .description("Full body compound movement")
                         .build();
 
