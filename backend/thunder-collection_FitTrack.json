@@ -1,0 +1,87 @@
+{
+  "client": "Thunder Client",
+  "collectionName": "FitTrack API",
+  "dateExported": "2026-05-25T00:00:00.000Z",
+  "version": "1.1",
+  "folders": [
+    { "id": "1", "name": "Users" },
+    { "id": "2", "name": "Exercises" },
+    { "id": "3", "name": "Workouts" },
+    { "id": "4", "name": "Foods" },
+    { "id": "5", "name": "Diets" },
+    { "id": "6", "name": "Dashboard" }
+  ],
+  "requests": [
+    {
+      "containerId": "1",
+      "name": "Create User",
+      "url": "http://localhost:8089/api/v1/users",
+      "method": "POST",
+      "body": { "type": "json", "raw": "{\n  \"username\": \"john_doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"secret\",\n  \"currentWeight\": 75.5,\n  \"targetWeight\": 70.0\n}" }
+    },
+    {
+      "containerId": "1",
+      "name": "Get All Users",
+      "url": "http://localhost:8089/api/v1/users",
+      "method": "GET"
+    },
+    {
+      "containerId": "2",
+      "name": "Create Exercise",
+      "url": "http://localhost:8089/api/v1/exercises",
+      "method": "POST",
+      "body": { "type": "json", "raw": "{\n  \"name\": \"Push Up\",\n  \"description\": \"Bodyweight exercise\",\n  \"category\": \"CHEST\"\n}" }
+    },
+    {
+      "containerId": "2",
+      "name": "Get All Exercises",
+      "url": "http://localhost:8089/api/v1/exercises",
+      "method": "GET"
+    },
+    {
+      "containerId": "3",
+      "name": "Create Workout Session",
+      "url": "http://localhost:8089/api/v1/workouts",
+      "method": "POST",
+      "body": { "type": "json", "raw": "{\n  \"userId\": \"REPLACE_WITH_USER_ID\",\n  \"date\": \"2026-05-25\",\n  \"durationMinutes\": 60,\n  \"notes\": \"Leg day\",\n  \"logs\": [\n    {\n      \"exerciseId\": \"REPLACE_WITH_EXERCISE_ID\",\n      \"sets\": 3,\n      \"reps\": 12,\n      \"weight\": 0\n    }\n  ]\n}" }
+    },
+    {
+      "containerId": "3",
+      "name": "Get Workouts By User",
+      "url": "http://localhost:8089/api/v1/workouts/user/REPLACE_WITH_USER_ID",
+      "method": "GET"
+    },
+    {
+      "containerId": "4",
+      "name": "Create Food",
+      "url": "http://localhost:8089/api/v1/foods",
+      "method": "POST",
+      "body": { "type": "json", "raw": "{\n  \"name\": \"Chicken Breast\",\n  \"calories\": 165.0,\n  \"protein\": 31.0,\n  \"carbs\": 0.0,\n  \"fat\": 3.6,\n  \"servingSize\": \"100g\"\n}" }
+    },
+    {
+      "containerId": "4",
+      "name": "Get All Foods",
+      "url": "http://localhost:8089/api/v1/foods",
+      "method": "GET"
+    },
+    {
+      "containerId": "5",
+      "name": "Create Meal Log",
+      "url": "http://localhost:8089/api/v1/diets",
+      "method": "POST",
+      "body": { "type": "json", "raw": "{\n  \"userId\": \"REPLACE_WITH_USER_ID\",\n  \"date\": \"2026-05-25\",\n  \"mealType\": \"LUNCH\",\n  \"items\": [\n    {\n      \"foodId\": \"REPLACE_WITH_FOOD_ID\",\n      \"servings\": 2.0\n    }\n  ]\n}" }
+    },
+    {
+      "containerId": "5",
+      "name": "Get Diets By User and Date",
+      "url": "http://localhost:8089/api/v1/diets/user/REPLACE_WITH_USER_ID?date=2026-05-25",
+      "method": "GET"
+    },
+    {
+      "containerId": "6",
+      "name": "Get Daily Summary",
+      "url": "http://localhost:8089/api/v1/dashboard/summary?userId=REPLACE_WITH_USER_ID&date=2026-05-25",
+      "method": "GET"
+    }
+  ]
+}
