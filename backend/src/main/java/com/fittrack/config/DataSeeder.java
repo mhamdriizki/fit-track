@@ -5,6 +5,7 @@ import com.fittrack.model.User;
 import com.fittrack.model.enums.Role;
 import com.fittrack.repository.ExerciseRepository;
 import com.fittrack.repository.UserRepository;
+import com.fittrack.repository.FoodRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +19,7 @@ import java.util.UUID;
 public class DataSeeder {
 
     @Bean
-    CommandLineRunner initData(ExerciseRepository exerciseRepository, UserRepository userRepository, JdbcTemplate jdbcTemplate) {
+    CommandLineRunner initData(ExerciseRepository exerciseRepository, UserRepository userRepository, FoodRepository foodRepository, JdbcTemplate jdbcTemplate) {
         return args -> {
             // Seed a default user if none exists (for development)
             if (userRepository.count() == 0) {
@@ -64,6 +65,48 @@ public class DataSeeder {
 
                 exerciseRepository.saveAll(List.of(pushUp, squat, pullUp, deadlift));
                 System.out.println("Seeded default Exercises.");
+            }
+
+            // Seed foods if none exists
+            if (foodRepository.count() == 0) {
+                Food chicken = Food.builder()
+                        .name("Chicken Breast")
+                        .calories(165.0)
+                        .protein(31.0)
+                        .carbs(0.0)
+                        .fat(3.6)
+                        .servingSize("100g")
+                        .build();
+
+                Food rice = Food.builder()
+                        .name("White Rice")
+                        .calories(130.0)
+                        .protein(2.7)
+                        .carbs(28.0)
+                        .fat(0.3)
+                        .servingSize("100g")
+                        .build();
+
+                Food broccoli = Food.builder()
+                        .name("Broccoli")
+                        .calories(55.0)
+                        .protein(3.7)
+                        .carbs(11.2)
+                        .fat(0.6)
+                        .servingSize("1 cup")
+                        .build();
+
+                Food egg = Food.builder()
+                        .name("Whole Egg")
+                        .calories(78.0)
+                        .protein(6.3)
+                        .carbs(0.6)
+                        .fat(5.3)
+                        .servingSize("1 large")
+                        .build();
+
+                foodRepository.saveAll(List.of(chicken, rice, broccoli, egg));
+                System.out.println("Seeded default Foods.");
             }
         };
     }
