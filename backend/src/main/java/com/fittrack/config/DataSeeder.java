@@ -8,6 +8,7 @@ import com.fittrack.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -17,21 +18,21 @@ import java.util.UUID;
 public class DataSeeder {
 
     @Bean
-    CommandLineRunner initData(ExerciseRepository exerciseRepository, UserRepository userRepository) {
+    CommandLineRunner initData(ExerciseRepository exerciseRepository, UserRepository userRepository, JdbcTemplate jdbcTemplate) {
         return args -> {
             // Seed a default user if none exists (for development)
             if (userRepository.count() == 0) {
-                User defaultUser = User.builder()
-                        .id(UUID.fromString("d290f1ee-6c54-4b01-90e6-d701748f0851"))
-                        .username("johndoe")
-                        .email("john@example.com")
-                        .passwordHash("hashed_password") // mock
-                        .currentWeight(75.5)
-                        .targetWeight(70.0)
-                        .role(Role.USER)
-                        .createdAt(LocalDateTime.now())
-                        .build();
-                userRepository.save(defaultUser);
+                jdbcTemplate.update(
+                    "INSERT INTO users (id, username, email, password_hash, current_weight, target_weight, role, created_at, updated_at) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)",
+                    UUID.fromString("d290f1ee-6c54-4b01-90e6-d701748f0851"),
+                    "johndoe",
+                    "john@example.com",
+                    "hashed_password",
+                    75.5,
+                    70.0,
+                    "USER"
+                );
                 System.out.println("Seeded default User.");
             }
 
