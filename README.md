@@ -44,3 +44,9 @@ fit-track/
 - Endpoint Workout Session & Logs di `/api/v1/workouts`
 - Entitas: Exercise, WorkoutSession, WorkoutLog
 - Karena fitur Autentikasi ditunda, userId di-pass secara manual pada Request Body.
+
+### Modul Diet & Nutrition Tracker
+- Endpoint Katalog Food di `/api/v1/foods`
+- Endpoint Meal Log & Nutrisi di `/api/v1/diets`
+- Entitas: Food, MealLog, MealLogItem
+- Kalkulasi kalori dan makronutrisi dilakukan otomatis di backend.
