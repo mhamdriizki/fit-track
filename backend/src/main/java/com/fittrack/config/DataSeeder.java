@@ -1,6 +1,7 @@
 package com.fittrack.config;
 
 import com.fittrack.model.Exercise;
+import com.fittrack.model.Food;
 import com.fittrack.model.User;
 import com.fittrack.model.enums.Role;
 import com.fittrack.repository.ExerciseRepository;
