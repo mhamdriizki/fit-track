@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DietListComponent } from '../components/diet-list/diet-list.component';
-import { DietFormComponent } from '../components/diet-form/diet-form.component';
-import { DietService } from '../../../core/services/diet.service';
-import { FoodService } from '../../../core/services/food.service';
-import { AuthService } from '../../../core/services/auth.service';
-import { Food, MealLog, MealLogCreateRequest } from '../../../core/models/diet.model';
+import { DietListComponent } from './components/diet-list/diet-list.component';
+import { DietFormComponent } from './components/diet-form/diet-form.component';
+import { DietService } from '../../core/services/diet.service';
+import { FoodService } from '../../core/services/food.service';
+import { AuthService } from '../../core/services/auth.service';
+import { Food, MealLog, MealLogCreateRequest } from '../../core/models/diet.model';
 
 @Component({
   selector: 'app-diet-page',
@@ -94,20 +94,20 @@ export class DietPageComponent implements OnInit {
 
     // Fetch foods
     this.foodService.getFoods().subscribe({
-      next: (foods) => {
+      next: (foods: Food[]) => {
         this.foods = foods;
       },
-      error: (err) => console.error('Failed to load foods', err)
+      error: (err: any) => console.error('Failed to load foods', err)
     });
 
     // Fetch diets
     this.dietService.getMealLogs(userId).subscribe({
-      next: (logs) => {
+      next: (logs: MealLog[]) => {
         // Sort descending by date & created at
         this.mealLogs = logs;
         this.loading = false;
       },
-      error: (err) => {
+      error: (err: any) => {
         console.error('Failed to load meal logs', err);
         this.loading = false;
       }
@@ -117,11 +117,11 @@ export class DietPageComponent implements OnInit {
   onSaveMeal(request: MealLogCreateRequest) {
     request.userId = this.auth.getCurrentUserId();
     this.dietService.createMealLog(request).subscribe({
-      next: (newLog) => {
+      next: (newLog: MealLog) => {
         this.mealLogs.unshift(newLog); // Add to top
         this.showForm = false;
       },
-      error: (err) => console.error('Failed to save meal', err)
+      error: (err: any) => console.error('Failed to save meal', err)
     });
   }
 }
