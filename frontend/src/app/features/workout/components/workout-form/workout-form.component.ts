@@ -49,7 +49,7 @@ import { AuthService } from '../../../../core/services/auth.service';
                   <label>Exercise</label>
                   <select formControlName="exerciseId" class="form-control">
                     <option value="" disabled>Select Exercise</option>
-                    <option *ngFor="let ex of exercises" [value]="ex.id">{{ ex.name }} ({{ ex.category }})</option>
+                    <option *ngFor="let ex of exercises" [value]="ex.id">{{ ex.name }} ({{ ex.muscleGroup }})</option>
                   </select>
                 </div>
                 
