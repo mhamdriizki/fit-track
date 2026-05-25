@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: fittrack-backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/fittrack
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
