@@ -54,3 +54,22 @@ fit-track/
 ### Modul Dashboard & Analytics
 - Endpoint Daily Summary di `/api/v1/dashboard/summary`
 - Melakukan agregasi data dari modul User, Workout, dan Diet pada suatu rentang tanggal.
+
+## Menjalankan Frontend secara Lokal
+
+1. Pastikan Anda telah menginstal **Node.js** (rekomendasi: v20+).
+2. Masuk ke folder frontend:
+   ```bash
+   cd frontend
+   ```
+3. Install dependensi dan jalankan aplikasi:
+   ```bash
+   npm install
+   npm start
+   ```
+4. Akses aplikasi di browser via `http://localhost:4200/`.
+
+### Modul Frontend
+- **Framework**: Angular 18 (Standalone Components)
+- **Styling**: SCSS dengan CSS Variables (Premium Glassmorphism Design)
+- **Struktur**: Menggunakan arsitektur `core/`, `shared/`, `features/`.
