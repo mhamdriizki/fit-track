@@ -50,3 +50,7 @@ fit-track/
 - Endpoint Meal Log & Nutrisi di `/api/v1/diets`
 - Entitas: Food, MealLog, MealLogItem
 - Kalkulasi kalori dan makronutrisi dilakukan otomatis di backend.
+
+### Modul Dashboard & Analytics
+- Endpoint Daily Summary di `/api/v1/dashboard/summary`
+- Melakukan agregasi data dari modul User, Workout, dan Diet pada suatu rentang tanggal.
