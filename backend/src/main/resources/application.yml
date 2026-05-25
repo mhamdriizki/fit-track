@@ -1,11 +1,14 @@
+server:
+  port: 8089
+
 spring:
   application:
     name: fittrack-backend
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/fittrack
+    url: jdbc:postgresql://localhost:5433/fittrack
     username: postgres
-    password: password
+    password: Langit1105
     driver-class-name: org.postgresql.Driver
 
   jpa:
