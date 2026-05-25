@@ -34,3 +34,7 @@ fit-track/
    ```
 5. Akses dokumentasi API via Swagger UI (jika aplikasi berjalan di port 8080):
    [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+### Modul User
+- CRUD Endpoint di `/api/v1/users`
+- Entitas: User, Role
+- Service & Repository terintegrasi dengan PostgreSQL
