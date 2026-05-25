@@ -7,7 +7,8 @@ export interface Exercise {
 
 export interface WorkoutLog {
   id?: string;
-  exerciseId: string;
+  exercise?: Exercise;
+  exerciseId?: string;
   exerciseName?: string; // Optional for display
   sets: number;
   reps: number;
