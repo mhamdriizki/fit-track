@@ -2,7 +2,7 @@ package com.fittrack.config;
 
 import com.fittrack.model.Exercise;
 import com.fittrack.model.User;
-import com.fittrack.model.Role;
+import com.fittrack.model.enums.Role;
 import com.fittrack.repository.ExerciseRepository;
 import com.fittrack.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
