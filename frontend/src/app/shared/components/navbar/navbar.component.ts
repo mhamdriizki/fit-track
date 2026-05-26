@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '../../../core/services/auth.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -11,13 +13,19 @@ import { RouterModule } from '@angular/router';
       <div class="brand">
         <span class="logo">FitTrack</span>
       </div>
-      <ul class="nav-links">
+      <ul class="nav-links" *ngIf="(currentUser$ | async)">
         <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Dashboard</a></li>
         <li><a routerLink="/workout" routerLinkActive="active">Workout</a></li>
         <li><a routerLink="/diet" routerLinkActive="active">Diet Log</a></li>
       </ul>
       <div class="actions">
-        <button class="btn-primary">Sign In</button>
+        <ng-container *ngIf="(currentUser$ | async) as user; else guestLinks">
+          <span class="user-greeting">Hi, {{ user.username }}!</span>
+          <button class="btn-primary logout-btn" (click)="logout()">Log Out</button>
+        </ng-container>
+        <ng-template #guestLinks>
+          <a routerLink="/login" class="btn-primary login-btn">Sign In</a>
+        </ng-template>
       </div>
     </nav>
   `,
@@ -54,6 +62,33 @@ import { RouterModule } from '@angular/router';
         color: var(--color-primary);
       }
     }
+    .user-greeting {
+      margin-right: 15px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    .login-btn {
+      text-decoration: none;
+      display: inline-block;
+    }
+    .logout-btn {
+      background: rgba(239, 68, 68, 0.1);
+      color: #ef4444;
+      border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+    .logout-btn:hover {
+      background: rgba(239, 68, 68, 0.2);
+    }
   `]
 })
-export class NavbarComponent {}
+export class NavbarComponent {
+  currentUser$: Observable<any>;
+
+  constructor(private authService: AuthService) {
+    this.currentUser$ = this.authService.currentUser$;
+  }
+
+  logout() {
+    this.authService.logout();
+  }
+}

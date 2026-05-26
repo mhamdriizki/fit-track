@@ -8,6 +8,7 @@ import com.fittrack.model.dto.UserResponse;
 import com.fittrack.model.enums.Role;
 import com.fittrack.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public UserResponse createUser(UserCreateRequest request) {
@@ -32,9 +34,7 @@ public class UserServiceImpl implements UserService {
         User user = User.builder()
                 .username(request.getUsername())
                 .email(request.getEmail())
-                // In a real application, password should be encoded (e.g., using BCrypt).
-                // For now, we store it as is since Security isn't implemented yet.
-                .passwordHash(request.getPassword())
+                .passwordHash(passwordEncoder.encode(request.getPassword()))
                 .currentWeight(request.getCurrentWeight())
                 .targetWeight(request.getTargetWeight())
                 .role(Role.USER)
