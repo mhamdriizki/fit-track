@@ -1,17 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 :root {
   /* Core Colors */
   --color-primary: #004aad; /* Deep Blue */
   --color-primary-hover: #003682;
   --color-secondary: #3b82f6; /* Lighter Blue */
-  
+
   /* Backgrounds */
   --bg-main: #f9fafb; /* Very light cool grey */
   --bg-surface: #ffffff;
   --bg-glass: #ffffff; /* Removed glass, just pure white */
-  
+
   /* Text */
   --text-primary: #1f2937; /* Dark slate */
   --text-secondary: #6b7280; /* Medium slate */
@@ -20,7 +20,8 @@
   /* Borders & Shadows */
   --border-color: rgba(0, 0, 0, 0.05);
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   --shadow-glass: 0 4px 24px rgba(0, 0, 0, 0.04); /* Very soft diffuse shadow */
 
   /* Utilities */
@@ -47,20 +48,25 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: var(--bg-main);
   color: var(--text-primary);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   body {
     padding-bottom: 70px; /* Space for bottom navbar */
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
