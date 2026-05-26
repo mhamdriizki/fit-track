@@ -3,9 +3,9 @@
 
 :root {
   /* Core Colors */
-  --color-primary: #f97316; /* Vibrant Soft Orange */
-  --color-primary-hover: #ea580c;
-  --color-secondary: #fdba74; /* Peach/Light Orange */
+  --color-primary: #004aad; /* Deep Blue */
+  --color-primary-hover: #003682;
+  --color-secondary: #3b82f6; /* Lighter Blue */
   
   /* Backgrounds */
   --bg-main: #f9fafb; /* Very light cool grey */
@@ -52,6 +52,12 @@ body {
   color: var(--text-primary);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 70px; /* Space for bottom navbar */
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

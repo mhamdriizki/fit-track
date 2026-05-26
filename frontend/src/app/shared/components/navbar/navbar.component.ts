@@ -80,7 +80,38 @@ import { Observable } from 'rxjs';
       color: var(--text-primary);
       box-shadow: none;
     }
-  `]
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 1rem;
+      }
+      .user-greeting {
+        display: none; /* Hide greeting on mobile to save space */
+      }
+      .nav-links {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: var(--bg-surface);
+        margin: 0;
+        padding: 0.75rem 0;
+        justify-content: space-around;
+        border-top: 1px solid var(--border-color);
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+        z-index: 999;
+      }
+      .nav-links li {
+        flex: 1;
+        text-align: center;
+      }
+      .nav-links a {
+        display: block;
+        padding: 0.5rem;
+        font-size: 0.875rem;
+      }
+    }
 })
 export class NavbarComponent {
   currentUser$: Observable<any>;
