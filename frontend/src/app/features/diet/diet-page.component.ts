@@ -49,11 +49,16 @@ import { Food, MealLog, MealLogCreateRequest } from '../../core/models/diet.mode
         align-items: center;
         margin-bottom: 2rem;
       }
+      @media (max-width: 768px) {
+        .page-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+        }
+      }
       .page-header h2 {
         font-size: 2rem;
-        background: var(--gradient-primary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: var(--color-primary);
         margin-bottom: 0.25rem;
       }
       .subtitle {
