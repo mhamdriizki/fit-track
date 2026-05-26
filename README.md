@@ -71,5 +71,9 @@ fit-track/
 
 ### Modul Frontend
 - **Framework**: Angular 18 (Standalone Components)
-- **Styling**: SCSS dengan CSS Variables (Premium Glassmorphism Design)
+- **Styling**: SCSS dengan CSS Variables (Clean Minimalist Deep Blue Light Theme & Mobile Responsive)
 - **Struktur**: Menggunakan arsitektur `core/`, `shared/`, `features/`.
+- **Fitur Tersedia**:
+  - Halaman Dashboard, Workout Log, dan Diet Log yang interaktif
+  - Form Login & Registrasi
+  - Desain Mobile Responsive dengan Bottom Navigation Bar (berbasis Icon)

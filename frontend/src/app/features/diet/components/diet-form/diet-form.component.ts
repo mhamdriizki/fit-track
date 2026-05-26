@@ -123,7 +123,7 @@ import { Food, MealLogCreateRequest } from '../../../../core/models/diet.model';
         font-weight: 500;
       }
       .form-control {
-        background: rgba(255, 255, 255, 0.05);
+        background: var(--bg-surface);
         border: 1px solid var(--border-color);
         padding: 0.75rem 1rem;
         border-radius: 8px;
@@ -135,7 +135,7 @@ import { Food, MealLogCreateRequest } from '../../../../core/models/diet.model';
         &:focus {
           outline: none;
           border-color: var(--color-primary);
-          background: rgba(255, 255, 255, 0.08);
+          background: var(--bg-surface);
         }
       }
       select.form-control {
@@ -170,22 +170,23 @@ import { Food, MealLogCreateRequest } from '../../../../core/models/diet.model';
         display: flex;
         gap: 1rem;
         align-items: flex-end;
-        background: rgba(0, 0, 0, 0.2);
+        background: var(--bg-main);
         padding: 1.25rem;
         border-radius: 8px;
         position: relative;
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border-color);
       }
       .index {
         position: absolute;
         top: -10px;
         left: 10px;
-        background: var(--bg-dark);
+        background: var(--bg-surface);
         color: var(--color-primary);
         font-size: 0.75rem;
         padding: 2px 8px;
         border-radius: 10px;
         font-weight: bold;
+        border: 1px solid var(--border-color);
       }
       .select-group {
         flex: 2;
@@ -229,29 +230,10 @@ import { Food, MealLogCreateRequest } from '../../../../core/models/diet.model';
         }
       }
 
-      /* Buttons (using global styles if available, or redefining here) */
-      .btn-primary, .btn-secondary {
-        padding: 0.75rem 1.5rem;
-        border-radius: 8px;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.2s;
-        border: none;
-      }
-      .btn-primary {
-        background: var(--gradient-primary);
-        color: white;
-      }
+      /* Buttons (using global styles if available) */
       .btn-primary:disabled {
         opacity: 0.5;
         cursor: not-allowed;
-      }
-      .btn-secondary {
-        background: rgba(255, 255, 255, 0.1);
-        color: var(--text-primary);
-      }
-      .btn-secondary:hover {
-        background: rgba(255, 255, 255, 0.2);
       }
       .btn-secondary.small {
         padding: 0.5rem 1rem;

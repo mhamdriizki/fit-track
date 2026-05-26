@@ -56,6 +56,13 @@ import { Exercise, WorkoutSession, WorkoutSessionCreateRequest } from '../../cor
       align-items: center;
       margin-bottom: 2rem;
     }
+    @media (max-width: 768px) {
+      .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+    }
     .subtitle {
       color: var(--text-secondary);
     }

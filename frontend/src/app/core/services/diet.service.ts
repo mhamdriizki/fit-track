@@ -12,8 +12,9 @@ export class DietService {
 
   constructor(private http: HttpClient) {}
 
-  getMealLogs(userId: string): Observable<MealLog[]> {
-    return this.http.get<MealLog[]>(`${this.apiUrl}/user/${userId}`);
+  getMealLogs(userId: string, date?: string): Observable<MealLog[]> {
+    const targetDate = date || new Date().toISOString().split('T')[0];
+    return this.http.get<MealLog[]>(`${this.apiUrl}/user/${userId}?date=${targetDate}`);
   }
 
   createMealLog(request: MealLogCreateRequest): Observable<MealLog> {

@@ -10,8 +10,6 @@ import { AuthService } from '../../core/services/auth.service';
   imports: [CommonModule, FormsModule, RouterModule],
   template: `
     <div class="auth-container">
-      <div class="bg-shape shape-1"></div>
-      <div class="bg-shape shape-2"></div>
       
       <div class="glass auth-card">
         <div class="card-header">
@@ -126,34 +124,7 @@ import { AuthService } from '../../core/services/auth.service';
       align-items: center;
       min-height: calc(100vh - 100px);
       padding: 2rem;
-      overflow: hidden;
-      animation: fadeIn 0.8s ease-out;
-    }
-    
-    .bg-shape {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      z-index: -1;
-      opacity: 0.6;
-      animation: float 10s infinite ease-in-out alternate;
-    }
-    
-    .shape-1 {
-      width: 40vw;
-      height: 40vw;
-      background: rgba(99, 102, 241, 0.4);
-      top: -10%;
-      left: -10%;
-    }
-    
-    .shape-2 {
-      width: 35vw;
-      height: 35vw;
-      background: rgba(236, 72, 153, 0.4);
-      bottom: -10%;
-      right: -10%;
-      animation-delay: -5s;
+      animation: fadeIn 0.4s ease-out;
     }
     
     .auth-card {
@@ -161,10 +132,6 @@ import { AuthService } from '../../core/services/auth.service';
       max-width: 450px;
       padding: 3rem 2.5rem;
       border-radius: 20px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(16px) saturate(180%);
-      -webkit-backdrop-filter: blur(16px) saturate(180%);
     }
     
     .card-header {
@@ -211,13 +178,14 @@ import { AuthService } from '../../core/services/auth.service';
     .form-control {
       width: 100%;
       padding: 0.875rem 1rem;
-      background: rgba(120, 120, 120, 0.05);
-      border: 1px solid var(--border-color);
+      background: var(--bg-surface);
+      border: 1px solid rgba(0,0,0,0.1);
       border-radius: 10px;
       color: var(--text-primary);
       font-family: inherit;
       font-size: 1rem;
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.02);
     }
     
     .form-control::placeholder {
@@ -228,8 +196,8 @@ import { AuthService } from '../../core/services/auth.service';
     .form-control:focus {
       outline: none;
       border-color: var(--color-primary);
-      background: rgba(120, 120, 120, 0.08);
-      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+      background: var(--bg-surface);
+      box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.15);
     }
     
     .auth-submit {
@@ -306,17 +274,12 @@ import { AuthService } from '../../core/services/auth.service';
     }
     
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); filter: blur(5px); }
-      to { opacity: 1; transform: translateY(0); filter: blur(0); }
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     
     @keyframes spin {
       to { transform: rotate(360deg); }
-    }
-    
-    @keyframes float {
-      0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(50px, 30px) scale(1.1); }
     }
   `]
 })

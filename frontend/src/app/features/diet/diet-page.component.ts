@@ -5,7 +5,11 @@ import { DietFormComponent } from './components/diet-form/diet-form.component';
 import { DietService } from '../../core/services/diet.service';
 import { FoodService } from '../../core/services/food.service';
 import { AuthService } from '../../core/services/auth.service';
-import { Food, MealLog, MealLogCreateRequest } from '../../core/models/diet.model';
+import {
+  Food,
+  MealLog,
+  MealLogCreateRequest,
+} from '../../core/models/diet.model';
 
 @Component({
   selector: 'app-diet-page',
@@ -15,7 +19,7 @@ import { Food, MealLog, MealLogCreateRequest } from '../../core/models/diet.mode
     <div class="diet-page">
       <header class="page-header">
         <div>
-          <h2>Diet & Nutrition</h2>
+          <h1>Diet & Nutrition</h1>
           <p class="subtitle">Track your daily meals and macros</p>
         </div>
         <button class="btn-primary" (click)="showForm = true" *ngIf="!showForm">
@@ -23,11 +27,12 @@ import { Food, MealLog, MealLogCreateRequest } from '../../core/models/diet.mode
         </button>
       </header>
 
-      <app-diet-form 
-        *ngIf="showForm" 
+      <app-diet-form
+        *ngIf="showForm"
         [availableFoods]="foods"
-        (save)="onSaveMeal($event)" 
-        (cancel)="showForm = false">
+        (save)="onSaveMeal($event)"
+        (cancel)="showForm = false"
+      >
       </app-diet-form>
 
       <div class="logs-section">
@@ -40,7 +45,6 @@ import { Food, MealLog, MealLogCreateRequest } from '../../core/models/diet.mode
   styles: [
     `
       .diet-page {
-        max-width: 800px;
         margin: 0 auto;
       }
       .page-header {
@@ -49,11 +53,16 @@ import { Food, MealLog, MealLogCreateRequest } from '../../core/models/diet.mode
         align-items: center;
         margin-bottom: 2rem;
       }
+      @media (max-width: 768px) {
+        .page-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+        }
+      }
       .page-header h2 {
         font-size: 2rem;
-        background: var(--gradient-primary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: var(--color-primary);
         margin-bottom: 0.25rem;
       }
       .subtitle {
@@ -81,7 +90,7 @@ export class DietPageComponent implements OnInit {
   constructor(
     private dietService: DietService,
     private foodService: FoodService,
-    private auth: AuthService
+    private auth: AuthService,
   ) {}
 
   ngOnInit() {
@@ -97,7 +106,7 @@ export class DietPageComponent implements OnInit {
       next: (foods: Food[]) => {
         this.foods = foods;
       },
-      error: (err: any) => console.error('Failed to load foods', err)
+      error: (err: any) => console.error('Failed to load foods', err),
     });
 
     // Fetch diets
@@ -110,7 +119,7 @@ export class DietPageComponent implements OnInit {
       error: (err: any) => {
         console.error('Failed to load meal logs', err);
         this.loading = false;
-      }
+      },
     });
   }
 
@@ -121,7 +130,7 @@ export class DietPageComponent implements OnInit {
         this.mealLogs.unshift(newLog); // Add to top
         this.showForm = false;
       },
-      error: (err: any) => console.error('Failed to save meal', err)
+      error: (err: any) => console.error('Failed to save meal', err),
     });
   }
 }
