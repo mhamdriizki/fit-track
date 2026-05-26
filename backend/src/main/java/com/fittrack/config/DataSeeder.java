@@ -11,6 +11,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -20,7 +21,7 @@ import java.util.UUID;
 public class DataSeeder {
 
     @Bean
-    CommandLineRunner initData(ExerciseRepository exerciseRepository, UserRepository userRepository, FoodRepository foodRepository, JdbcTemplate jdbcTemplate) {
+    CommandLineRunner initData(ExerciseRepository exerciseRepository, UserRepository userRepository, FoodRepository foodRepository, JdbcTemplate jdbcTemplate, PasswordEncoder passwordEncoder) {
         return args -> {
             // Seed a default user if none exists (for development)
             if (userRepository.count() == 0) {
@@ -30,7 +31,7 @@ public class DataSeeder {
                     UUID.fromString("d290f1ee-6c54-4b01-90e6-d701748f0851"),
                     "johndoe",
                     "john@example.com",
-                    "hashed_password",
+                    passwordEncoder.encode("password"),
                     75.5,
                     70.0,
                     "USER"
