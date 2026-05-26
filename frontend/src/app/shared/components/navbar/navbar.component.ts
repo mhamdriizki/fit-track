@@ -82,12 +82,12 @@ import { Observable } from 'rxjs';
     }
 
     /* Mobile Responsive Styles */
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       .navbar {
         padding: 1rem;
       }
       .user-greeting {
-        display: none; /* Hide greeting on mobile to save space */
+        display: none; /* Hide greeting on smaller screens to save space */
       }
       .nav-links {
         position: fixed;
