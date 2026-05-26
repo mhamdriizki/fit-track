@@ -68,7 +68,7 @@ import { WorkoutSession } from '../../../../core/models/workout.model';
         padding-bottom: 0.5rem;
       }
       .duration {
-        background: rgba(16, 185, 129, 0.1);
+        background: var(--bg-main);
         color: var(--color-primary);
         padding: 0.25rem 0.75rem;
         border-radius: 20px;

@@ -145,13 +145,15 @@ import { DailySummary } from '../../core/models/dashboard.model';
       gap: 1rem;
       padding: 0.75rem 1.25rem;
       border-radius: var(--border-radius);
+      background: var(--bg-surface);
+      box-shadow: var(--shadow-sm);
     }
     .date-selector label {
       font-weight: 500;
       color: var(--text-secondary);
     }
     .form-control {
-      background: rgba(0, 0, 0, 0.2);
+      background: var(--bg-main);
       border: 1px solid var(--border-color);
       padding: 0.5rem 1rem;
       border-radius: 8px;
@@ -205,14 +207,14 @@ import { DailySummary } from '../../core/models/dashboard.model';
     }
     .progress-container {
       height: 8px;
-      background: rgba(255, 255, 255, 0.1);
+      background: var(--bg-main);
       border-radius: 4px;
       overflow: hidden;
       margin-bottom: 0.75rem;
     }
     .progress-bar {
       height: 100%;
-      background: var(--gradient-primary);
+      background: var(--color-primary);
       border-radius: 4px;
       transition: width 1s ease-out;
     }
@@ -233,12 +235,12 @@ import { DailySummary } from '../../core/models/dashboard.model';
       width: 100px;
       height: 100px;
       border-radius: 50%;
-      border: 4px solid var(--color-secondary);
+      border: 4px solid var(--color-primary);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: rgba(16, 185, 129, 0.05);
+      background: var(--bg-main);
     }
     .circle-stat .value {
       font-size: 1.75rem;
@@ -251,6 +253,7 @@ import { DailySummary } from '../../core/models/dashboard.model';
       font-size: 0.75rem;
       color: var(--text-secondary);
       text-transform: uppercase;
+      font-weight: 500;
     }
 
     /* Nutrition Stats */
@@ -272,7 +275,7 @@ import { DailySummary } from '../../core/models/dashboard.model';
     }
     .macro-progress-bg {
       height: 6px;
-      background: rgba(255, 255, 255, 0.1);
+      background: var(--bg-main);
       border-radius: 3px;
       overflow: hidden;
     }
@@ -281,13 +284,13 @@ import { DailySummary } from '../../core/models/dashboard.model';
       border-radius: 3px;
       transition: width 1s ease-out;
     }
-    .cal-progress { background: #3b82f6; }
+    .cal-progress { background: var(--color-primary); }
     .pro-progress { background: #ef4444; }
     .carb-progress { background: #f59e0b; }
     .fat-progress { background: #8b5cf6; }
 
     .main-macro {
-      background: rgba(0,0,0,0.2);
+      background: var(--bg-main);
       padding: 1rem;
       border-radius: 8px;
       margin-bottom: 1.5rem;
@@ -308,17 +311,19 @@ import { DailySummary } from '../../core/models/dashboard.model';
     .w-full { width: 100%; display: block; }
     .text-center { text-align: center; }
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.05);
+      background: var(--bg-main);
       border: 1px solid var(--border-color);
       padding: 0.75rem;
       border-radius: 8px;
-      color: var(--text-primary);
+      color: var(--color-primary);
+      font-weight: 500;
       cursor: pointer;
       transition: all 0.2s;
       text-decoration: none;
     }
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background: var(--border-color);
+      color: var(--color-primary-hover);
     }
 
     @keyframes fadeIn {

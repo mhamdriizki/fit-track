@@ -136,15 +136,15 @@ import { AuthService } from '../../../../core/services/auth.service';
       border-top: 1px solid var(--border-color);
     }
     .btn-secondary {
-      background: rgba(16, 185, 129, 0.1);
+      background: var(--bg-main);
       color: var(--color-primary);
-      border: none;
+      border: 1px solid var(--border-color);
       padding: 0.5rem 1rem;
       border-radius: 8px;
       font-weight: 500;
       cursor: pointer;
       transition: var(--transition);
-      &:hover { background: rgba(99, 102, 241, 0.2); }
+      &:hover { background: var(--border-color); color: var(--color-primary-hover); }
     }
     .logs-array {
       display: flex;
@@ -152,7 +152,7 @@ import { AuthService } from '../../../../core/services/auth.service';
       gap: 1rem;
     }
     .log-item {
-      background: rgba(0,0,0,0.02);
+      background: var(--bg-main);
       border: 1px solid var(--border-color);
       border-radius: 8px;
       padding: 1rem;

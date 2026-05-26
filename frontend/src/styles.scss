@@ -3,41 +3,40 @@
 
 :root {
   /* Core Colors */
-  --color-primary: #10b981; /* Emerald Green */
-  --color-primary-hover: #059669;
-  --color-secondary: #6ee7b7; /* Pastel Green */
+  --color-primary: #f97316; /* Vibrant Soft Orange */
+  --color-primary-hover: #ea580c;
+  --color-secondary: #fdba74; /* Peach/Light Orange */
   
   /* Backgrounds */
-  --bg-main: #f0fdf4; /* Very light green tint */
+  --bg-main: #f9fafb; /* Very light cool grey */
   --bg-surface: #ffffff;
-  --bg-glass: rgba(255, 255, 255, 0.7);
+  --bg-glass: #ffffff; /* Removed glass, just pure white */
   
   /* Text */
-  --text-primary: #064e3b; /* Dark emerald */
-  --text-secondary: #047857;
+  --text-primary: #1f2937; /* Dark slate */
+  --text-secondary: #6b7280; /* Medium slate */
   --text-inverse: #ffffff;
 
   /* Borders & Shadows */
-  --border-color: rgba(16, 185, 129, 0.15);
+  --border-color: rgba(0, 0, 0, 0.05);
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-glass: 0 8px 32px 0 rgba(16, 185, 129, 0.08);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-glass: 0 4px 24px rgba(0, 0, 0, 0.04); /* Very soft diffuse shadow */
 
   /* Utilities */
-  --border-radius: 12px;
-  --transition: all 0.3s ease;
+  --border-radius: 16px; /* slightly rounder for minimalist look */
+  --transition: all 0.25s ease;
 }
 
-/* Force light theme as requested */
+/* Force minimalist light theme */
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Keeping it light/pastel even in dark mode preference, or adapting slightly */
-    --bg-main: #ecfdf5;
+    --bg-main: #f9fafb;
     --bg-surface: #ffffff;
-    --bg-glass: rgba(255, 255, 255, 0.8);
-    --text-primary: #064e3b;
-    --text-secondary: #047857;
-    --border-color: rgba(16, 185, 129, 0.2);
+    --bg-glass: #ffffff;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --border-color: rgba(0, 0, 0, 0.05);
   }
 }
 
@@ -59,31 +58,31 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
+  letter-spacing: -0.025em;
 }
 
-/* Glassmorphism Utility */
+/* Redefined Glass to be a clean Card */
 .glass {
-  background: var(--bg-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: var(--bg-surface);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-glass);
 }
 
 /* Basic Button */
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background: var(--color-primary);
   color: var(--text-inverse);
   border: none;
-  border-radius: var(--border-radius);
+  border-radius: 12px;
   padding: 0.75rem 1.5rem;
   font-weight: 500;
   cursor: pointer;
   transition: var(--transition);
-  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 4px 10px rgba(249, 115, 22, 0.2);
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+    background: var(--color-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(249, 115, 22, 0.3);
   }
 }

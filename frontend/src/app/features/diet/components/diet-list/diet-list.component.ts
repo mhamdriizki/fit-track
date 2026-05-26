@@ -65,7 +65,6 @@ import { MealLog } from '../../../../core/models/diet.model';
         text-align: center;
         color: var(--text-secondary);
         border-radius: var(--border-radius);
-        background: rgba(255, 255, 255, 0.03);
       }
       .diet-card {
         padding: 1.5rem;
@@ -95,8 +94,8 @@ import { MealLog } from '../../../../core/models/diet.model';
         font-size: 0.875rem;
       }
       .total-macros .macro.cal {
-        background: rgba(16, 185, 129, 0.1);
-        color: var(--color-secondary);
+        background: var(--bg-main);
+        color: var(--color-primary);
         padding: 0.5rem 1rem;
         border-radius: 20px;
         font-weight: 700;
@@ -105,7 +104,7 @@ import { MealLog } from '../../../../core/models/diet.model';
       .macros-summary {
         display: flex;
         justify-content: space-around;
-        background: rgba(0, 0, 0, 0.2);
+        background: var(--bg-main);
         padding: 1rem;
         border-radius: 12px;
         margin-bottom: 1.5rem;
@@ -162,7 +161,7 @@ import { MealLog } from '../../../../core/models/diet.model';
       }
       .food-cal {
         font-weight: 600;
-        color: var(--color-secondary);
+        color: var(--color-primary);
       }
     `,
   ],

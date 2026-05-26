@@ -43,9 +43,7 @@ import { Observable } from 'rxjs';
     .brand .logo {
       font-size: 1.5rem;
       font-weight: 700;
-      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--color-primary);
     }
     .nav-links {
       display: flex;
@@ -72,12 +70,15 @@ import { Observable } from 'rxjs';
       display: inline-block;
     }
     .logout-btn {
-      background: rgba(239, 68, 68, 0.1);
-      color: #ef4444;
-      border: 1px solid rgba(239, 68, 68, 0.2);
+      background: var(--bg-main);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-color);
+      box-shadow: none;
     }
     .logout-btn:hover {
-      background: rgba(239, 68, 68, 0.2);
+      background: var(--border-color);
+      color: var(--text-primary);
+      box-shadow: none;
     }
   `]
 })
