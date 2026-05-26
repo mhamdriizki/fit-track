@@ -112,6 +112,7 @@ import { Observable } from 'rxjs';
         font-size: 0.875rem;
       }
     }
+  `]
 })
 export class NavbarComponent {
   currentUser$: Observable<any>;
