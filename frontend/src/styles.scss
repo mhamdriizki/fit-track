@@ -3,39 +3,41 @@
 
 :root {
   /* Core Colors */
-  --color-primary: #6366f1; /* Vibrant Indigo */
-  --color-primary-hover: #4f46e5;
-  --color-secondary: #ec4899; /* Vibrant Pink */
+  --color-primary: #10b981; /* Emerald Green */
+  --color-primary-hover: #059669;
+  --color-secondary: #6ee7b7; /* Pastel Green */
   
   /* Backgrounds */
-  --bg-main: #f8fafc;
+  --bg-main: #f0fdf4; /* Very light green tint */
   --bg-surface: #ffffff;
   --bg-glass: rgba(255, 255, 255, 0.7);
   
   /* Text */
-  --text-primary: #0f172a;
-  --text-secondary: #64748b;
+  --text-primary: #064e3b; /* Dark emerald */
+  --text-secondary: #047857;
   --text-inverse: #ffffff;
 
   /* Borders & Shadows */
-  --border-color: rgba(0, 0, 0, 0.1);
+  --border-color: rgba(16, 185, 129, 0.15);
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  --shadow-glass: 0 8px 32px 0 rgba(16, 185, 129, 0.08);
 
   /* Utilities */
   --border-radius: 12px;
   --transition: all 0.3s ease;
 }
 
+/* Force light theme as requested */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-main: #0f172a;
-    --bg-surface: #1e293b;
-    --bg-glass: rgba(30, 41, 59, 0.7);
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --border-color: rgba(255, 255, 255, 0.1);
+    /* Keeping it light/pastel even in dark mode preference, or adapting slightly */
+    --bg-main: #ecfdf5;
+    --bg-surface: #ffffff;
+    --bg-glass: rgba(255, 255, 255, 0.8);
+    --text-primary: #064e3b;
+    --text-secondary: #047857;
+    --border-color: rgba(16, 185, 129, 0.2);
   }
 }
 
@@ -78,10 +80,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   cursor: pointer;
   transition: var(--transition);
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
   }
 }

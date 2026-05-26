@@ -136,7 +136,7 @@ import { AuthService } from '../../../../core/services/auth.service';
       border-top: 1px solid var(--border-color);
     }
     .btn-secondary {
-      background: rgba(99, 102, 241, 0.1);
+      background: rgba(16, 185, 129, 0.1);
       color: var(--color-primary);
       border: none;
       padding: 0.5rem 1rem;

@@ -142,7 +142,7 @@ import { AuthService } from '../../core/services/auth.service';
     .shape-1 {
       width: 40vw;
       height: 40vw;
-      background: rgba(99, 102, 241, 0.4);
+      background: rgba(16, 185, 129, 0.25); /* Emerald */
       top: -10%;
       left: -10%;
     }
@@ -150,7 +150,7 @@ import { AuthService } from '../../core/services/auth.service';
     .shape-2 {
       width: 35vw;
       height: 35vw;
-      background: rgba(236, 72, 153, 0.4);
+      background: rgba(163, 230, 53, 0.25); /* Lime */
       bottom: -10%;
       right: -10%;
       animation-delay: -5s;
@@ -229,7 +229,7 @@ import { AuthService } from '../../core/services/auth.service';
       outline: none;
       border-color: var(--color-primary);
       background: rgba(120, 120, 120, 0.08);
-      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
     }
     
     .auth-submit {
